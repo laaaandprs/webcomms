@@ -312,6 +312,9 @@ margin-bottom: 1rem;
     object-fit: contain;
     object-position: center;
 }
+.categories-conatiner a{
+    text-decoration: none;
+}
 .designs-conatiner .box span{
     font-weight: 500;
     font-size: 14px;
@@ -524,8 +527,8 @@ margin-bottom: 1rem;
         gap: 7px;
     }
     .container img {
-        right: 22%;
-        width: 175px;
+        right: 25%;
+        width: 180px;
 }
 @media (max-width: 375px) {
     header {
@@ -567,8 +570,8 @@ margin-bottom: 1rem;
         
     }
     .container img {
-    	right: 22.5%;
-     width: 175px;
+    	right: 26%;
+        width: 160px;
     }
     .home-text {
     	margin-left: 20%;
