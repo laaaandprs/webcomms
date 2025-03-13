@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art'U</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+</head>
+<body>
+<nav>
+    <div class="nav-left">
+        <img src="img/logo.png" class="logo">
+        <ul>
+            <li><img src="img/notification.png"></li>
+            <li><img src="img/inbox.png"></li>
+            <li><img src="img/video.png"></li>
+        </ul>
+    </div>
+    <div class="nav-right">
+       <div class="search-box">
+            <img src="img/search.png">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="nav-user-icon online">
+            <img src="img/status-1.jpg">
+        </div>
+
+        <!-- Menu Icon --> 
+     <div class="bx bx-menu" id="menu-icon"></div>
+     <!-- Nav List -->
+      <ul class="navbar">
+         <li><a href="#home" class="home-active"><span><i class='bx bx-home' style='color:#fff' ></i></i></span>Home</a></li>
+         <li><a href="#designs" class="highlight"><span><i class='bx bxs-user-account' style='color:#fff' ></i></span> Switch Account</a></li>
+         <li><a href="#settings" class="highlight"><span><i class='bx bxs-cog' style='color:#fff' ></i></span>Settings & Privacy</a></li>
+         <li><a href="#categories" class="highlight"><span><i class='bx bxs-help-circle' style='color:#fff'  ></i></span>Help & Support</a></li>
+         <li><a href="#about" class="highlight" onclick="logout()"><span><i class='bx bxs-log-out' style='color:#fff' ></i></span>Log Out</a></li>
+      </ul>
+
+    </div>
+
+</nav>
+
+<div class="container">
+    <!-- left-sidebar -->
+    <div class="left-sidebar">
+        <div class="imp-links">
+            <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAfdJREFUSEudVu11gzAMlGgHSSdIGKGbJO81Jp0C2IKYH+kmzQSFDZJFivow/pCxnPaVHwkBWyfdSecgrC8EAEqe/vMBwhwOzKcLau/Nl3DP1ye52E0IFIWLAJQaGgCsOUCSRK4ehHuBdOi68uqWIM+iqsYLEezFkoTUhcLnVXetdy8egCdTqfFGCBvPjZBpqGzmN1DB8bXeLdSD08AGUmoU5f2L7pzSXu+QS2rDI1RqoOWFkF1CUQzLAaIK+AtTwap9aILr8xMdZuBpmvUB0LpsTqdhQxN+LpTGXBoA1oG+AqUGv9ThFEgvXVfe+QbXvu+nYfNNeJsBuDZabyUAgEQDBNDnEs2QZIRIdUPo9Rb5DP2iAbUzJbzt3GY3M+tmCxosefmrUqMVeb2FWt2XDef6ePzaIxaX0I6hZbMAvNzAiFOLWn0um/nX23HYI+JFHjSESAMuDhdZtgdqbcZ13MrctADCHESDxueAaxpvzvmSPGgrNw0aZFxmZbuJVVh0Q5FvHaZnMmiCF4UKcl7E23RFkdHgISNxUK5fmBVJZG52CFAgvUae7g+fnO1Z4ExyXlFn1zTRoe/Lj3S4cgYXR14ryAZtaAixzp/JeZflgmfMDsCYl3FMrB+2IxdfaLjseSCbWv64Sd4ISyMv4i348L+LEDlQFL/8AdQvKi7Ot3osAAAAAElFTkSuQmCC"/> Hottest Designs </a>
+            <a href="#"><img src="img/friends.png"> Friends </a>
+            <a href="#"><img src="img/group.png"> Groups </a>
+            <a href="#"><img src="img/marketplace.png"> Marketplace </a>
+            <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAodJREFUSEuFVe21ojAQvRMbwQoe2sB7VrJ6zoJsFWAVC/GHdKKvAXErkEbMrAmJJBB38wdOPubj3jszhOkiAGw3zb+/AcSPwzvmtd3Sn8giEDi0PbMcfTYJSNt5rUgUALKs2wpBn8z4ApAQ0CtGT8TfC4ELE/r696r3o/ZdDw4itoui+1KKTgAlI2bhU52lYlwWC7Wr63UfszPPgIA86yqASmdupCLCx2uLD/K4qjR/UzQDMPPcM24tE3HbNOnudeYR6PQwGOGDlOvKzzjIoCiuGpazjsGQbF0Lwcu6WfXFvkuUortBldDKJt1lNiAXtRBqU9fry/A0IBnY57c7A8mcFD4IgZZZlMy81U+FUEuNe1GMTk0OTJfj8WMz4OQcEJD97LZEdIoRFZeydaqoZMA4dctl7Pgw+z6+BD99URpM4yoORe64IRjOnEDNpSy7nYmM1mEiqFd98atL1IPu8Rp7X+HPmrkcj+kmcJDnN01eMoSkDkJQy0wls03fV87sf56elKkR0EtF2sETmiSU3bQKQ3W9Q01Xe3NMlyPJhgM/AwttJGqrvklDDO8P9bCqxgxIS/TPyUnQJEbcSpnu8uxaEYRWymzpNiGIv5nF57MYNbyJrg9H8FgHBBR703vOgdQ00cU1YSV0fQQ9mJXV+8ztnPyXBEOYXHF5RAfGLAxjo4pKmfzzsYM6NQ0WZ81OIwgfigh+sYGj97J9V4Ftcfnv/EisWyk/hl7g6jDSBIcMJtLI82sFiB8gJNGROTzqpUyXQewxB5HkbGWb3lRGB04EolmgAUT/qBitrsdjGD5EZrrpsdk2cug1jiW/vU+R9a7Fh+OE6ff3ZxCRnhsxo/9pne9FMzv5C+boVS75pyNjAAAAAElFTkSuQmCC"/> Arts </a>
+            <a href="#"> See More </a>
+        </div>
+        <div>
+            <div class="shortcut-links">
+                <p>Your Shortcuts</p>
+                <a href="#"><img src="img/shortcut-1.png"> CN Designers </a>
+                <a href="#"><img src="img/shortcut-2.png"> Animators </a>
+                <a href="#"><img src="img/shortcut-3.png"> Artists </a>
+                <a href="#"><img src="img/shortcut-4.png"> Cartoonists </a>
+            </div>
+        </div>
+    </div>
+    <!-- main-content -->
+    <div class="main-content">
+
+        <div class="story-gallery">
+            <div class="story story1">
+                <img src="img/upload.png">
+                <p>Post Story</p>
+            </div>
+            <div class="story story2">
+                <img src="img/member-1.jfif">
+                <p>Ashley</p>
+            </div>
+            <div class="story story3">
+                <img src="img/member-2.jfif">
+                <p>Reylance</p>
+            </div>
+            <div class="story story4">
+                <img src="img/member-3.jfif">
+                <p>Patrick</p>
+            </div>
+            <div class="story story5">
+                <img src="img/profile-pic.png">
+                <p>Regor</p>
+            </div>
+        </div>
+
+        <div class="write-post-container">
+            <div class="user-profile">
+                <img src="img/status-1.jpg">
+                <div>
+                    <p>Roland Paris</p>
+                    <small>Public <i class='bx bxs-down-arrow'></i></small>
+                </div>
+            </div>
+
+            <div class="post-input-container">
+                <textarea rows="3" placeholder="What's on your mind, Roland?"></textarea>
+                <div class="add-post-links">
+                    <a href="#"><img src="img/live-video.png"> Live Video</a>
+                    <a href="#"><img src="img/photo.png"> Photo/Video</a>
+                    <a href="#"><img src="img/feeling.png"> Feeling/Activity</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="img/status-1.jpg">
+                <div>
+                    <p>Roland Paris</p>
+                    <span>Feb 27 2025, 7:48 am</span>
+                </div>
+            </div>
+            <p class="post-text">im bored kaya nadrawing ko si tan</p>
+            <img src="img/gru.png" class="post-img">
+
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div><i class='bx bxs-heart' style='color:#ff0000'  ></i></div>
+                    <div><i class='bx bx-message-rounded'></i></div>
+                    <div><i class='bx bx-paper-plane'></i></div>
+                </div>
+            </div>
+            <div class="containera">
+                <div id="commentsContainer"></div>
+                <textarea 
+                    id="commentInput" 
+                    placeholder="Write your comment... (Press Enter to submit)"
+                ></textarea>
+                <button class="primary" onclick="submitComment()">Submit</button>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="img/a10.jpg">
+                <div>
+                    <p>James D. Dela Peña</p>
+                    <span>Feb 28 2025, 9:41 am</span>
+                </div>
+            </div>
+            <p class="post-text">Hello Guys, This is my Artwork.</p>
+            <img src="img/d13.jpg" class="post-img">
+
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div><i class='bx bxs-heart' style='color:#ff0000'  ></i></div>
+                    <div><i class='bx bx-message-rounded'></i></div>
+                    <div><i class='bx bx-paper-plane'></i></div>
+                </div>
+            </div>
+            <div class="containera">
+                <div id="commentsContainer"></div>
+                <textarea 
+                    id="commentInput" 
+                    placeholder="Write your comment... (Press Enter to submit)"
+                ></textarea>
+                <button class="primary" onclick="submitComment()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <!-- right-sidebar -->
+    <div class="right-sidebar">
+
+        <div class="sidebar-title">
+            <h4>Events</h4>
+            <a href="#">See All</a>
+        </div>
+
+        <div class="event">
+            <div class="left-event">
+                <h3>27</h3>
+                <span>March</span>
+            </div>
+            <div class="right-event">
+                <h4>Social Media</h4>
+                <p><i class='bx bxs-map'></i>Paris Industries</p>
+                <a href="#">More Info</a>
+            </div>
+        </div>
+        <div class="event">
+            <div class="left-event">
+                <h3>7</h3>
+                <span>March</span>
+            </div>
+            <div class="right-event">
+                <h4>Mock Defense</h4>
+                <p><i class='bx bxs-map'></i>Arellano University - ECC</p>
+                <a href="#">More Info</a>
+            </div>
+        </div>
+        <div class="sidebar-title">
+            <h4>Advertisement</h4>
+            <a href="#">Close</a>
+        </div>
+        <img src="img/advertisement.png" class="sidebar-ads">
+
+        <div class="sidebar-title">
+            <h4>Conversation</h4>
+            <a href="#">Hide Chat</a>
+        </div>
+        
+        <div class="online-list">
+            <div class="online">
+                <img src="img/member-1.jfif">
+            </div>
+            <p>Ashley Nicole Santiago</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/member-2.jfif">
+            </div>
+            <p>Reylance Llemos</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/member-3.jfif">
+            </div>
+            <p>Patrick Calizo</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/profile-pic.png">
+            </div>
+            <p>Regor Caliste</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/member-4.jfif">
+            </div>
+            <p>JM Santiago</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/member-5.jfif">
+            </div>
+            <p>Gerrico Rosales</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="img/profile-pic.png">
+            </div>
+            <p>Regor Caliste</p>
+        </div>
+
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
